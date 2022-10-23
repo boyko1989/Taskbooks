@@ -2,7 +2,6 @@ import tasks_condition as c
 import tasks_ansver as n
 import argparse
 
-
 parser = argparse.ArgumentParser()
 
 parser.add_argument("num")
@@ -13,20 +12,30 @@ parser.add_argument("-i", "--isit", action='store_true', help="Проверка 
 
 args = parser.parse_args()
 
+header_1 = f'\nЗадача {args.num}'
+len_und = len(header_1) - 1
+
 if args.all:
-    print(f'\nЗадача {args.num}\n\nУСЛОВИЕ:\n---------------------------------')
+    print(header_1)
+    print('=' * len_und + '\n\nУСЛОВИЕ:\n---------------------------------')
     c.get_task(args.num)
     print('\nОТВЕТ:\n---------------------------------')
     n.get_ansver(args.num)
+    print()
 
 elif args.c:
-    print(f'\nЗадача {args.num}\n\n')
+    print(header_1)
+    print('=' * len_und)
     c.get_task(args.num)
+    print()
 
 elif args.ans:
-    print(f'\nЗадача {args.num}\n\n')
+    print(header_1)
+    print('=' * len_und)
     n.get_ansver(args.num)
+    print()
 
 else:
-    print(f'\nЗадача {args.num}\n\n')
-    print(args.isit)
+    print(header_1)
+    print('=' * len_und)
+    print(args.isit + '\n')
