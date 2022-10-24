@@ -78,5 +78,21 @@ def _code_107():
     return ansver
 
 
+def _code_108():
+    a, b = 40, 30
+    Per = a * 2 + b * 2
+    # sq_side = int(Per / 4)
+    sq_side = 0
+    sq_Per = 1
+
+    while Per != sq_Per:
+        sq_side += 1
+        sq_Per = sq_side * 4
+
+    ansver = f'Квадрат со стороной {sq_side}'
+
+    return ansver
+
+
 if __name__ == '__main__':
     print('Этот файл существует не для исполнения!!\nЗдесь находится код решения задач)')
